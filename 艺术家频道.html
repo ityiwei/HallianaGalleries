@@ -1,0 +1,483 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>艺术家频道</title>
+<link rel="stylesheet" type="text/css" href="css/global.css"/>
+<link rel="stylesheet" type="text/css" href="css/insurance_channel.css"/>
+<script type="text/javascript" src="js/jquery-1.7.1-min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/jquery.soChange-min.js"></script>
+
+</head>
+
+<body>	
+<script type="text/javascript">
+$(function(){
+	$("#signUp").click(function(){
+		$("#myLoginLB").show();
+		$("#myGalleryLogin").show();
+	});
+	$("#myGalleryLogin_close").click(function(){
+		$("#myLoginLB").hide();
+		$("#myGalleryLogin").hide();
+	});
+	$("#loginIn").click(function(){
+		$("#myLoginLB").show();
+		$("#myGalleryLogin").show();
+	});
+	$("#signUp").mouseover(function(){
+		$(this).addClass("hover");	
+	});
+	$("#signUp").mouseout(function(){
+		$(this).removeClass("hover");	
+	});
+	$("#loginIn").mouseover(function(){
+		$(this).addClass("hover");	
+	});
+	$("#loginIn").mouseout(function(){
+		$(this).removeClass("hover");	
+	});
+});
+
+$(document).ready(function(){
+	$('#baseExtend .login_container').soChange({
+	thumbObj:'#myGalleryLogin_tabs li.login_tabs',
+	thumbNowClass:'login_selectedtab',
+	slideTime:0,
+	autoChange:false, 
+	delayTime:100
+	});
+});
+
+</script>
+
+
+<div id="myLoginLB" class="core_lightbox"></div>
+
+<div id="myGalleryLogin" class="ball_box">
+	<div id="baseExtend" class="clear">
+        <ul id="myGalleryLogin_tabs" class="login_tabbar">
+            <li id="myGalleryLogin_loginTab" class="login_tabs">
+                <a href="#tab1">登陆</a>
+            </li>
+            <li id="myGalleryLogin_registerTab" class="login_tabs">
+                <a href="#tab2">注册</a>
+            </li>
+            <li id="myGalleryLogin_close" style="cursor:pointer;">
+                <div class="modal_close_button"></div>
+            </li>
+        </ul>
+        
+		<div id="myGalleryLogin_loginTabContainer" class="tab_container">
+            
+            <div id="myGalleryLogin_loginTabContent" class="login_container clear">
+                <div class="other_way">QQ账号登陆</div>
+                <div class="login_title">海棠画廊用户登陆</div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">邮箱输入错误</span>
+                    <input class="core_Email core_form_field" type="email" value="邮箱地址" onblur="if(this.value==''){this.value='邮箱地址';}" onfocus="if(this.value=='邮箱地址'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">密码错误</span>
+                    <input class="core_Password core_form_field" type="password" value="输入正确的密码" onblur="if(this.value==''){this.value='输入正确的密码';}" onfocus="if(this.value=='输入正确的密码'){this.value='';}" />
+                </div>
+                <div class="link forget_word">
+                    <a href="##">忘记密码</a>
+                </div>
+                <div class="clear" style="margin-top:82px;">
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="primary medium" type="button" style="" value="登陆">
+                    </div>
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="secondary medium" type="button" style="display: none;" value="取消">
+                    </div>
+                </div>
+            </div>
+            
+			<div id="myGalleryLogin_registerTabContent" class="login_container">
+            	<div class="other_way">使用邮箱账号注册</div>
+                <div class="login_title">输入您的邮箱</div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">邮箱输入错误</span>
+                    <input class="core_Text core_form_field" type="text" value="邮箱地址" onblur="if(this.value==''){this.value='邮箱地址';}" onfocus="if(this.value=='邮箱地址'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error"></span>
+                    <input class="core_Password core_form_field" type="password" value="输入正确的密码" onblur="if(this.value==''){this.value='输入正确的密码';}" onfocus="if(this.value=='输入正确的密码'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error"  style="display:none;">密码不一致</span>
+                    <input class="core_Password core_form_field" type="password" value="确认正确的密码" onblur="if(this.value==''){this.value='确认正确的密码';}" onfocus="if(this.value=='确认正确的密码'){this.value='';}" />
+                </div>
+                <div class="link user_rules">
+                    <a href="##">用户协议</a>
+                </div>
+                <div class="clear" style="margin-top:45px;">
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="primary medium" type="button" style="" value="注册">
+                    </div>
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="secondary medium" type="button" style="display: none;" value="取消">
+                    </div>
+                </div>
+			</div>
+            
+		</div>
+	</div>
+</div>
+
+<div class="w_1008" id="hdr">
+    <!--登录注册-->
+    <div class="hdr-account">
+        <ul class="hdr-header">
+            <li><span id="signUp">注册</span>|</li>
+            <li><span id="loginIn">登录</span>|</li>
+            <li class="my-gallery "><span><a href="#" class="icon">我的画廊</a></span></li>
+        </ul>
+        <div class="menu" id="hdr-account-menu">
+            <ul>
+                <li><a href="#">You+Art</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+	<!--登录注册  over-->
+<div class="hdr">
+        <!--logo-->
+        <h1 class="hdr-logo"><a href="#"><img src="images/logo.jpg"/></a></h1>
+        <!--logo over-->
+		<div class="hdr-right">
+            <div class="hdr-nav-cont">
+                <!--导航-->
+                <div class="hdr-nav-left">
+                
+                    <!--导航第一行-->
+                    <div class="hdr-top-head">
+                        <ul>
+                            <li><a href="#" >首页</a></li>
+                            <li class="hdr-selected"><a href="#">商店</a></li>
+                            <li><a href="#">艺术空间</a></li>
+                            <li><a href="#">798灵感</a></li>
+                            <li><a href="#">印客</a></li>
+                        </ul>
+                    </div>
+                    <!--导航第一行 over-->
+                                            
+                    <!--导航第二行-->
+                    <div class="hdr-nav" id="hdr-navbar">
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">主题</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">类型</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">画科</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#"> 艺术家</a></div>
+                                <!--导航第二行弹出框-->	
+                  	<div class="hdr-navbox  hdr-navbox4">
+                                    <div class="hdr-navbox-ptr">
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">抽象</a></li>
+                                                <li><a href="#">动物</a></li>
+                                                <li><a href="#" >建筑</a></li>
+                                                <li><a href="#" >儿童</a></li>
+                                                <li><a href="#">天文学/太空</a></li>
+                                                <li><a href="#">图书插画</a></li>
+                                                <li><a href="#">植物</a></li>
+                                                <li><a href="#">漫画</a></li>
+                                                <li><a href="#">舞蹈</a></li>
+                                                <li><a href="#">教育</a></li>
+                                                <li><a href="#">幻想</a></li>
+                                                <li><a href="#">时尚</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">食物</a></li>
+                                                <li><a href="#">家用家居</a></li>
+                                                <li><a href="#">幽默</a></li>
+                                                <li><a href="#">地图</a></li>
+                                                <li><a href="#">动机</a></li>
+                                                <li><a href="#">电影</a></li>
+                                                <li><a href="#">音乐</a></li>
+                                                <li><a href="#">人物</a></li>
+                                                <li><a href="#">表演艺术</a></li>
+                                                <li><a href="#">远方</a></li>
+                                                <li><a href="#">刊物</a></li>
+                                                <li><a href="#">中教与灵性</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">名胜</a></li>
+                                                <li><a href="#">四季</a></li>
+                                                <li><a href="#">体育</a></li>
+                                                <li><a href="#">静物</a></li>
+                                                <li><a href="#">电视</a></li>
+                                                <li><a href="#">运输</a></li>
+                                                <li><a href="#">符号艺术</a></li>
+                                                <li><a href="#">世界文化</a></li>
+                                                <li>&nbsp;</li>
+                                                <li class="hdr-strong"><a href="#">查看全部主题&nbsp;&nbsp;&gt;</a></li>
+                                                <li class="hdr-strong"><a href="#">更多&nbsp;&nbsp;&gt;</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--导航第二行弹出框 over-->		
+                        </div>
+                        <div class="hdr-subnav">
+                          <div class="hdr-subnavie"><a href="#" >场景</a></div></div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">畅销产品</a></div>
+                        </div>
+                    </div>
+                    <!--导航第二行 over-->	
+				</div>
+				<!--导航  over--> 
+                
+				<!--搜索--> 
+                <div class="hdr-nav-right">
+                    <div style="float: left;position:relative;" class="hdr-searchby">
+                        <span class="nav-facade-active" id="nav-search-in">
+                            <span data-value="search-alias=aps" id="nav-search-in-content" style="overflow:visible;width:auto;">搜索艺术品</span>
+                            <span class="nav-down-arrow nav-sprite"></span>
+                            <select title="Search in" class="SiteFont" id="headerSearchDropdown">
+                                <option value="artist">
+                                    搜索艺术品1
+                                </option>
+                                <option value="title">
+                                    搜索艺术品2
+                                </option>
+                                <option value="mg">
+                                    搜索艺术品艺术3
+                                </option>
+                                <option selected="selected" value="all">
+                                    搜索艺术品4
+                                </option>
+                            </select>
+                        </span>
+                    </div>
+                    <form target="_parent" method="post" name="SearchForm" id="SearchForm">
+                        <input type="text" class="input" id="Search_String" name="Search_String" />
+                        <input type="submit" value="" class="searchButton" id="SearchForm">
+                    </form>
+                </div>
+                <!--搜索  over--> 	
+			</div>
+            <!--客服购物车--> 
+            <div id="hdr-help-cart" style="overflow:hidden;">
+                <ul class="hdr-help-box">
+                    <li class="live-chat"><span>客服</span></li>
+                    <li class="help"><span>帮助</span></li>
+                    <li class="cart"><span>( 0 )</span></li>
+                </ul>
+            </div>
+            <!--客服购物车 over--> 
+        </div>
+    </div>
+    <!--弹出的帮助框-->
+    <div id="hdr-help-box">
+        <div class="hdr-help-top">
+            <div class="hdr-help-close"></div>
+            <div class="hdr-help-box-head">我们在这里帮助</div>
+        </div>
+        <div class="hdr-help-content">
+            <ul class="hdr-help-text">
+                <li><span class="hdr-help-sub">给我们打电话</span></li>
+                <li>800-952-5592</li>
+                <li>周一至周六</li>
+                <li>上午9时 至 晚上10点</li>
+                <li class="hdr-help-margintop"><span class="hdr-help-sub"> 给我们发一个电子邮件</span></li>
+                <li>写信给我们<a href="#">support@art.com</a></li>
+                <li>我们会尽快回应</li>
+            </ul>
+            <ul class="hdr-help-text-right">
+                <li><span class="hdr-help-sub"> 找寻答案</span></li>
+                <li><a href="#">我们有什么可以帮忙的吗？</a></li>
+                <li><a href="#">追踪您的订单</a></li>
+                <li  class="hdr-help-margintop"><a href="#">订购</a></li>
+                <li><a href="#">配送方式</a></li>
+                <li><a href="#">返回</a></li>
+                <li><a href="#">国际订单</a></li>
+                <li><a href="#">礼券</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--弹出的帮助框  over-->
+</div>		
+
+<div class="ht_tit">
+	<a href="#">购买</a>&gt<a href="#">艺术家</a>
+</div>				
+<div class="w_1008 pd_main">
+	<div class="pd_mlt">
+		<div class="pd_tit">
+			<h2 class="no_pd">艺术家</h2>
+		</div>
+		<dl class="pdl_dl lx_chal">
+			<dt>TOP10 艺术家</dt>
+			<dd><a href="#">安迪`沃霍尔</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">安迪`沃霍尔</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+		</dl>	
+		<dl class="pdl_dl lx_chal">
+			<dt>东方艺术大师</dt>
+			<dd><a href="#">安迪`沃霍尔</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">安迪`沃霍尔</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+			<dd><a href="#">谌北新</a></dd>
+		</dl>	
+		<dl class="pdl_dl lx_chal">
+			<dt>西方艺术大师</dt>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+			<dd><a href="#">Leonetto Cappiello</a></dd>
+		</dl>
+	</div>
+	<div class="sd_mrt ysj_adcon">
+			<div class="ysj_tit">推荐艺术家</div>
+			<div class="ybad"><img src="images/ysj_01.jpg"></div>
+		<div class="sd_tit">东方艺术大师</div>
+		<div class="ovh">
+			<div class="ys_lt"><a href="#"><img src="images/ysj_02.jpg"></a></div>	
+			<div class="ys_rt">
+				<h4><a href="#">毕加索</a></h4>	
+				<p>20世纪反对偶像崇拜，谁定义了艺术，因为我们知道它。</p><br/>
+				<div class="cplx_btn">
+						<a href="#">购买</a>
+				</div>
+			</div>
+		</div>
+		<ul class="lx_list">
+			<li class="no_mr"><a href="#"><img src="images/ysj_03.jpg"></a></li>	
+			<li><a href="#"><img src="images/ysj_03.jpg"></a></li>	
+			<li><a href="#"><img src="images/ysj_03.jpg"></a></li>	
+		</ul>
+		<div class="sd_tit">西方艺术大师</div>
+		<div class="ovh">
+			<div class="ys_lt"><a href="#"><img src="images/hlgad_14.jpg"></a></div>	
+			<div class="ys_rt">
+				<h4><a href="#">梵高</a></h4>	
+				<p>随着情绪的诚实和粗糙之美，梵高的作品继续着迷。</p>
+				<div class="cplx_btn">
+						<a href="#">购买</a>
+				</div>
+			</div>
+		</div>
+		<ul class="lx_list">
+			<li class="no_mr"><a href="#"><img src="images/sdfxad_10.jpg"></a></li>	
+			<li><a href="#"><img src="images/sdfxad_10.jpg"></a></li>	
+			<li><a href="#"><img src="images/sdfxad_10.jpg"></a></li>	
+		</ul>
+	</div>
+</div>		
+	
+
+
+
+<!--最近浏览-->
+<div class="w_1008 hg_histroy">
+	<h3 class="yb_hbd">最近浏览</h3>
+    <div class="hg_histroy_wap">
+        <ul id="mycarousel">
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+});
+</script>
+<!--最近浏览 end-->
+
+<div class="hg_foot">
+	<div class="w_1008 pdb25 clear">
+    	<div class="foot_nav fl">
+        	<ul class="nav_list clear">
+            	<li>
+                	<h3>订购免费电话</h3>
+                    <p>
+                    	800-952-5592<br>
+                    	周一 - 周六<br>
+                    	上午9点 - 下午10点
+                    </p>
+                </li>
+                <li>
+                	<h3>顾客服务</h3>
+                    <p>
+                    	<a href="#">联系我们</a>
+                    	<a href="#">订购</a>
+                    	<a href="#">配送方式</a>
+                    	<a href="#">常见问题</a>
+                    </p>
+                </li>
+                <li>
+                	<h3>顾客服务</h3>
+                    <p>
+                    	<a href="#">进入我的帐户</a>
+                    	<a href="#">跟踪我的订单</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="foot_mail fr">
+        	<p class="title">订阅HALLIANA.COM电子邮件</p>
+        	<p class="clear"><input class="input_text" type="text" /><input class="input_btn" type="button" value="提交" /></p>
+        	<div class="touch">
+            	<span>关注我们：</span>
+                <a href="#"><img src="images/icon_sina.gif" /></a>
+                <a href="#"><img src="images/icon_qq.gif" /></a>
+                <a href="#"><img src="images/icon_vsins.gif" /></a>
+                <a href="#"><img src="images/icon_baidu.gif" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="border"><div></div></div>
+    <div class="w_1008 copyright">
+    	<p>CopyRight ? 2007-2016 halliana.com 苏ICP备8348号 NewPower Co. All </p>
+    </div>
+</div>
+				
+</body>
+</html>

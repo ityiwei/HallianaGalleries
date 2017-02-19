@@ -1,0 +1,779 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>商品详细页</title>
+<link rel="stylesheet" type="text/css" href="css/global.css"/>
+<link rel="stylesheet" type="text/css" href="css/channel.css"/>
+<script type="text/javascript" src="js/jquery-1.7.1-min.js"></script>
+<script type="text/javascript" src="js/simpleZoom.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/jquery.soChange-min.js"></script>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a.js"></script>
+<script type="text/javascript" src="js/3Dscript.js"></script>
+
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div,span,input,img,a');
+    </script>
+<![endif]-->
+
+</head>
+
+<body>	
+<script type="text/javascript">
+$(function(){
+	$("#signUp").click(function(){
+		$("#myLoginLB").show();
+		$("#myGalleryLogin").show();
+	});
+	$("#myGalleryLogin_close").click(function(){
+		$("#myLoginLB").hide();
+		$("#myGalleryLogin").hide();
+	});
+	$("#loginIn").click(function(){
+		$("#myLoginLB").show();
+		$("#myGalleryLogin").show();
+	});
+	$("#signUp").mouseover(function(){
+		$(this).addClass("hover");	
+	});
+	$("#signUp").mouseout(function(){
+		$(this).removeClass("hover");	
+	});
+	$("#loginIn").mouseover(function(){
+		$(this).addClass("hover");	
+	});
+	$("#loginIn").mouseout(function(){
+		$(this).removeClass("hover");	
+	});
+});
+
+$(document).ready(function(){
+	$('#baseExtend .login_container').soChange({
+	thumbObj:'#myGalleryLogin_tabs li.login_tabs',
+	thumbNowClass:'login_selectedtab',
+	slideTime:0,
+	autoChange:false, 
+	delayTime:100
+	});
+});
+
+</script>
+
+
+<div id="myLoginLB" class="core_lightbox"></div>
+
+<div id="myGalleryLogin" class="ball_box">
+	<div id="baseExtend" class="clear">
+        <ul id="myGalleryLogin_tabs" class="login_tabbar">
+            <li id="myGalleryLogin_loginTab" class="login_tabs">
+                <a href="#tab1">登陆</a>
+            </li>
+            <li id="myGalleryLogin_registerTab" class="login_tabs">
+                <a href="#tab2">注册</a>
+            </li>
+            <li id="myGalleryLogin_close" style="cursor:pointer;">
+                <div class="modal_close_button"></div>
+            </li>
+        </ul>
+        
+		<div id="myGalleryLogin_loginTabContainer" class="tab_container">
+            
+            <div id="myGalleryLogin_loginTabContent" class="login_container clear">
+                <div class="other_way">QQ账号登陆</div>
+                <div class="login_title">海棠画廊用户登陆</div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">邮箱输入错误</span>
+                    <input class="core_Email core_form_field" type="email" value="邮箱地址" onblur="if(this.value==''){this.value='邮箱地址';}" onfocus="if(this.value=='邮箱地址'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">密码错误</span>
+                    <input class="core_Password core_form_field" type="password" value="输入正确的密码" onblur="if(this.value==''){this.value='输入正确的密码';}" onfocus="if(this.value=='输入正确的密码'){this.value='';}" />
+                </div>
+                <div class="link forget_word">
+                    <a href="##">忘记密码</a>
+                </div>
+                <div class="clear" style="margin-top:82px;">
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="primary medium" type="button" style="" value="登陆">
+                    </div>
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="secondary medium" type="button" style="display: none;" value="取消">
+                    </div>
+                </div>
+            </div>
+            
+			<div id="myGalleryLogin_registerTabContent" class="login_container">
+            	<div class="other_way">使用邮箱账号注册</div>
+                <div class="login_title">输入您的邮箱</div>
+                <div class="core_form_container">
+                    <span class="core_form_error" style="display:none;">邮箱输入错误</span>
+                    <input class="core_Text core_form_field" type="text" value="邮箱地址" onblur="if(this.value==''){this.value='邮箱地址';}" onfocus="if(this.value=='邮箱地址'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error"></span>
+                    <input class="core_Password core_form_field" type="password" value="输入正确的密码" onblur="if(this.value==''){this.value='输入正确的密码';}" onfocus="if(this.value=='输入正确的密码'){this.value='';}" />
+                </div>
+                <div class="core_form_container">
+                    <span class="core_form_error"  style="display:none;">密码不一致</span>
+                    <input class="core_Password core_form_field" type="password" value="确认正确的密码" onblur="if(this.value==''){this.value='确认正确的密码';}" onfocus="if(this.value=='确认正确的密码'){this.value='';}" />
+                </div>
+                <div class="link user_rules">
+                    <a href="##">用户协议</a>
+                </div>
+                <div class="clear" style="margin-top:45px;">
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="primary medium" type="button" style="" value="注册">
+                    </div>
+                    <div style="float: right; margin-left: 5px;">
+                        <input class="secondary medium" type="button" style="display: none;" value="取消">
+                    </div>
+                </div>
+			</div>
+            
+		</div>
+	</div>
+</div>
+
+<div class="w_1008" id="hdr">
+    <!--登录注册-->
+    <div class="hdr-account">
+        <ul class="hdr-header">
+            <li><span id="signUp">注册</span>|</li>
+            <li><span id="loginIn">登录</span>|</li>
+            <li class="my-gallery "><span><a href="#" class="icon">我的画廊</a></span></li>
+        </ul>
+        <div class="menu" id="hdr-account-menu">
+            <ul>
+                <li><a href="#">You+Art</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+	<!--登录注册  over-->
+<div class="hdr">
+        <!--logo-->
+        <h1 class="hdr-logo"><a href="#"><img src="images/logo.jpg"/></a></h1>
+        <!--logo over-->
+		<div class="hdr-right">
+            <div class="hdr-nav-cont">
+                <!--导航-->
+                <div class="hdr-nav-left">
+                
+                    <!--导航第一行-->
+                    <div class="hdr-top-head">
+                        <ul>
+                            <li><a href="#" >首页</a></li>
+                            <li class="hdr-selected"><a href="#">商店</a></li>
+                            <li><a href="#">艺术空间</a></li>
+                            <li><a href="#">798灵感</a></li>
+                            <li><a href="#">印客</a></li>
+                        </ul>
+                    </div>
+                    <!--导航第一行 over-->
+                                            
+                    <!--导航第二行-->
+                    <div class="hdr-nav" id="hdr-navbar">
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">主题</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">类型</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">画科</a></div>
+                      </div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#"> 艺术家</a></div>
+                                <!--导航第二行弹出框-->	
+                  	<div class="hdr-navbox  hdr-navbox4">
+                                    <div class="hdr-navbox-ptr">
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">抽象</a></li>
+                                                <li><a href="#">动物</a></li>
+                                                <li><a href="#" >建筑</a></li>
+                                                <li><a href="#" >儿童</a></li>
+                                                <li><a href="#">天文学/太空</a></li>
+                                                <li><a href="#">图书插画</a></li>
+                                                <li><a href="#">植物</a></li>
+                                                <li><a href="#">漫画</a></li>
+                                                <li><a href="#">舞蹈</a></li>
+                                                <li><a href="#">教育</a></li>
+                                                <li><a href="#">幻想</a></li>
+                                                <li><a href="#">时尚</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">食物</a></li>
+                                                <li><a href="#">家用家居</a></li>
+                                                <li><a href="#">幽默</a></li>
+                                                <li><a href="#">地图</a></li>
+                                                <li><a href="#">动机</a></li>
+                                                <li><a href="#">电影</a></li>
+                                                <li><a href="#">音乐</a></li>
+                                                <li><a href="#">人物</a></li>
+                                                <li><a href="#">表演艺术</a></li>
+                                                <li><a href="#">远方</a></li>
+                                                <li><a href="#">刊物</a></li>
+                                                <li><a href="#">中教与灵性</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hdr-navbox-col-list">
+                                            <ul>
+                                                <li><a href="#">名胜</a></li>
+                                                <li><a href="#">四季</a></li>
+                                                <li><a href="#">体育</a></li>
+                                                <li><a href="#">静物</a></li>
+                                                <li><a href="#">电视</a></li>
+                                                <li><a href="#">运输</a></li>
+                                                <li><a href="#">符号艺术</a></li>
+                                                <li><a href="#">世界文化</a></li>
+                                                <li>&nbsp;</li>
+                                                <li class="hdr-strong"><a href="#">查看全部主题&nbsp;&nbsp;&gt;</a></li>
+                                                <li class="hdr-strong"><a href="#">更多&nbsp;&nbsp;&gt;</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--导航第二行弹出框 over-->		
+                        </div>
+                        <div class="hdr-subnav">
+                          <div class="hdr-subnavie"><a href="#" >场景</a></div></div>
+                        <div class="hdr-subnav">
+                            <div class="hdr-subnavie"><a href="#">畅销产品</a></div>
+                        </div>
+                    </div>
+                    <!--导航第二行 over-->	
+				</div>
+				<!--导航  over--> 
+                
+				<!--搜索--> 
+                <div class="hdr-nav-right">
+                    <div style="float: left;position:relative;" class="hdr-searchby">
+                        <span class="nav-facade-active" id="nav-search-in">
+                            <span data-value="search-alias=aps" id="nav-search-in-content" style="overflow:visible;width:auto;">搜索艺术品</span>
+                            <span class="nav-down-arrow nav-sprite"></span>
+                            <select title="Search in" class="SiteFont" id="headerSearchDropdown">
+                                <option value="artist">
+                                    搜索艺术品1
+                                </option>
+                                <option value="title">
+                                    搜索艺术品2
+                                </option>
+                                <option value="mg">
+                                    搜索艺术品艺术3
+                                </option>
+                                <option selected="selected" value="all">
+                                    搜索艺术品4
+                                </option>
+                            </select>
+                        </span>
+                    </div>
+                    <form target="_parent" method="post" name="SearchForm" id="SearchForm">
+                        <input type="text" class="input" id="Search_String" name="Search_String" />
+                        <input type="submit" value="" class="searchButton" id="SearchForm">
+                    </form>
+                </div>
+                <!--搜索  over--> 	
+			</div>
+            <!--客服购物车--> 
+            <div id="hdr-help-cart" style="overflow:hidden;">
+                <ul class="hdr-help-box">
+                    <li class="live-chat"><span>客服</span></li>
+                    <li class="help"><span>帮助</span></li>
+                    <li class="cart"><span>( 0 )</span></li>
+                </ul>
+            </div>
+            <!--客服购物车 over--> 
+        </div>
+    </div>
+    <!--弹出的帮助框-->
+    <div id="hdr-help-box">
+        <div class="hdr-help-top">
+            <div class="hdr-help-close"></div>
+            <div class="hdr-help-box-head">我们在这里帮助</div>
+        </div>
+        <div class="hdr-help-content">
+            <ul class="hdr-help-text">
+                <li><span class="hdr-help-sub">给我们打电话</span></li>
+                <li>800-952-5592</li>
+                <li>周一至周六</li>
+                <li>上午9时 至 晚上10点</li>
+                <li class="hdr-help-margintop"><span class="hdr-help-sub"> 给我们发一个电子邮件</span></li>
+                <li>写信给我们<a href="#">support@art.com</a></li>
+                <li>我们会尽快回应</li>
+            </ul>
+            <ul class="hdr-help-text-right">
+                <li><span class="hdr-help-sub"> 找寻答案</span></li>
+                <li><a href="#">我们有什么可以帮忙的吗？</a></li>
+                <li><a href="#">追踪您的订单</a></li>
+                <li  class="hdr-help-margintop"><a href="#">订购</a></li>
+                <li><a href="#">配送方式</a></li>
+                <li><a href="#">返回</a></li>
+                <li><a href="#">国际订单</a></li>
+                <li><a href="#">礼券</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--弹出的帮助框  over-->
+</div>		
+
+<div class="w_1008 hg_path">		
+	<a href="##">购买</a> > <a href="##">商店</a> > <span>场景</span>				
+</div>
+
+<script>
+$(document).ready(function(){
+	$('#borderImg .pic_wap_list').soChange({
+	thumbObj:'#select_border li',
+	thumbNowClass:'cur',
+	thumbOverEvent:false,
+	clickFalse:true,
+	slideTime:0,
+	autoChange:false, 
+	delayTime:100
+	});
+});
+</script>
+<script>
+//$(document).ready(function(){
+//	$("#borderImg .pic_wap img").each(function(){	
+//		var picW=$("#borderImg .pic_wap img").width();
+//		var picH=$("#borderImg .pic_wap img").height();										  
+//		$("#borderImg .pic_wapper").css({width:picW*2+"px"});
+//		$("#borderImg .pic_wapper").css({height:picH*2+"px"});
+//		$("#borderImg .big_icon").bind("click",function(){
+//			$("#borderImg .pic_wapper").slideDown(200);
+//			$("#borderImg .pic_wap2 img").css({width:picW*2+"px"});
+//			$("#borderImg .pic_wap2 img").css({height:picH*2+"px"});
+//		});
+//		$("#borderImg .close_btn").click(function(){
+//			$("#borderImg .pic_wapper").hide(200);
+//			$("#borderImg .pic_wapper").css({display:"none"});
+//			$("#borderImg .pic_wap2 img").css({width:picW+"px"});
+//			$("#borderImg .pic_wap2 img").css({height:picH+"px"});
+//		});
+//	});	
+//});	
+</script>
+
+<script type="text/javascript">
+$(function(){	
+	$("#show").simpleZoom({
+		zoomBox : "#zoom",
+		markSize : [120, 120],
+		zoomSize : [360, 360],
+		zoomImg : [940, 980]
+	});
+});
+</script>
+<div class="w_1008 clear">
+	<div class="hg_detail_pic fl" id="borderImg">
+    	<div class="pic_wap_list">
+            <div class="pic_wap pic_wap" id="show">
+                <img src="images/detail_pic.jpg" />
+            </div>
+        	<span class="big_icon"></span>
+            
+            <div class="pic_wap2" id="zoom">
+                <img width="940" height="980" src="images/detail_pic.jpg" />
+            </div>
+   		</div>
+        <div class="pic_wap_list">
+            <div class="pic_wap pic_wap" id="show">
+                <img src="images/detail_pic2.jpg" />
+            </div>
+        	<span class="big_icon"></span>
+            
+            <div class="pic_wap2" id="zoom">
+                <img width="940" height="980" src="images/detail_pic2.jpg" />
+            </div>
+   		</div>
+        <div class="pic_wap_list">
+            <div class="pic_wap pic_wap" id="show">
+                <img src="images/detail_pic.jpg" />
+            </div>
+        	<span class="big_icon"></span>
+            
+            <div class="pic_wap2" id="zoom">
+                <img width="940" height="980" src="images/detail_pic.jpg" />
+            </div>
+   		</div>
+        <div class="pic_wap_list">
+            <div class="pic_wap pic_wap" id="show">
+                <img src="images/detail_pic2.jpg" />
+            </div>
+        	<span class="big_icon"></span>
+            
+            <div class="pic_wap2" id="zoom">
+                <img width="940" height="980" src="images/detail_pic2.jpg" />
+            </div>
+   		</div>
+        <div class="pic_wap_list">
+            <div class="pic_wap pic_wap" id="show">
+                <img src="images/detail_pic.jpg" />
+            </div>
+        	<span class="big_icon"></span>
+            
+            <div class="pic_wap2" id="zoom">
+                <img width="940" height="980" src="images/detail_pic.jpg" />
+            </div>
+   		</div>
+    </div>
+    
+    <div class="hg_detail_intro fr"> 
+    	<h2>光秃秃的树枝和红色的枫叶映衬着整 个天空</h2>
+        <div class="who_name">
+        	<a href="##">艺术家：雷蒙德格曼</a><span>|</span><span>编号：17981364584A </span>
+        </div>
+        <div class="about_pdc clear">
+        	<div class="about_pdc_left fl">
+                <div class="select">
+                    <h3>尺寸与打印类型</h3>
+                    <div class="type_box">
+                    	<div class="type_text">
+                        	<span>18cmx24cm</span>
+                            <span>大约2-4天</span>
+                            <span>￥159.99</span>
+                        </div>
+                        <ul class="type_list" style="display:none;">
+                        	<li>
+                                <span>18cmx24cm</span>
+                                <span>大约2-4天</span>
+                                <span>￥166.99</span>
+                            </li>
+                            <li>
+                                <span>18cmx24cm</span>
+                                <span>大约2-4天</span>
+                                <span>￥188.99</span>
+                            </li>
+                        </ul>
+                    </div>
+					<script>
+                        $(document).ready(function(){
+                        	$(".type_box .type_text").click(function(){
+                            	$(".type_box .type_list").show();
+                            })
+                        	$(".type_list li").click(function(){
+								$(this).parent().hide();
+								$(".type_text").text($(this).text());
+                            })
+                        })	
+                    </script>
+			
+                    
+                    <div class="time">预计物流时间：2-4天</div>
+                </div>
+                <div class="select_border" id="select_border">
+                    <h3>选择画框</h3>
+                    <ul clear="clear">
+                        <li><span><img width="58" height="48" src="images/pic_border.jpg" /></span></li>
+                        <li><span><img width="58" height="48" src="images/pic_border.jpg" /></span></li>
+                        <li><span><img width="58" height="48" src="images/pic_border.jpg" /></span></li>
+                        <li><span><img width="58" height="48" src="images/pic_border.jpg" /></span></li>
+                        <li><span><img width="58" height="48" src="images/pic_border.jpg" /></span></li>
+                    </ul>
+                </div>
+                <div class="art_detail">
+                	为“国家地理”的摄影师，“雷蒙德格曼周游世界，捕捉令人惊叹的图像，高举惊人的，普通大自然与人性。格曼，谁是“国家地理杂志”的主编，并已为他们拍摄了20年。
+                </div>
+                <div class="bshare-custom">
+                    <a title="分享到QQ空间" class="bshare-qzone"></a>
+                    <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
+                    <a title="分享到人人网" class="bshare-renren"></a>
+                    <a title="分享到腾讯微博" class="bshare-qqmb"></a>
+                    <a title="分享到豆瓣" class="bshare-douban"></a>
+                    <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+                </div>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+                <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+           	</div>
+            <div class="about_pdc_right fr">
+            	<div class="price">
+                	<h3>价格</h3>
+                    <strong>￥237.99</strong>
+                </div>
+                <div class="add_cart"><input type="button" value="添加到购物车" /></div>
+                <div class="store">
+                	<a href="##">收藏到我的画廊</a>
+                </div>
+                <div class="order_phone">
+                	电话订购：010 － 888888888
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w_1008 clear"> 
+	<div class="hg_detail_left fl">
+    	<div class="hg_detail_part hg_line mt36">
+        	<h3>设计师建议</h3>
+            
+            <div id="Index">
+                <div id="Index_Box">
+                  <pre class="prev">&nbsp;</pre>
+                  <pre class="next">&nbsp;</pre>
+                  <ul>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/1.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/2.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/3.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/4.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/5.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/6.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/7.jpg"></a></li>
+                    <li><a href="##"><img src="http://www.jq-school.com/upload/lb/8.jpg"></a></li>
+                  </ul>
+                </div>
+            </div>
+                
+          	<div class="buy_btn"><input type="button" value="" /></div>
+        </div>
+        <div class="hg_detail_part hg_line mt36">
+        	<h3>顾客评论</h3>
+            <div class="review">
+            	<p>综合评价</p>
+                <div class="stars">
+                	<img src="images/star_full01.gif" />
+                	<img src="images/star_full01.gif" />
+                	<img src="images/star_full01.gif" />
+                	<img src="images/star_half01.gif" />
+                	<img src="images/star_null01.gif" />
+                    <span>4.9</span>
+                </div>
+            </div>
+            <div class="pinlun_list">
+            	<ul>
+                	<li>	
+                    	<div class="vip_user">
+                        	<div class="vip_photo"><a href="#"><img src="images/vip_photo.jpg" /></a></div>
+                            <div class="vip_text"><a href="#">QIYUAN</a><br><a href="#">注册会员</a></div>
+                        </div>
+                        <div class="pl_detail">
+                        	<div class="stars">
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_half02.gif" />
+                                <img src="images/star_null02.gif" />
+                            </div>
+                            <div class="works">
+                            	<a class="name" href="##">华丽的画</a>
+                                <span class="time"> 2013-04-29  22：12：11</span>
+                            </div>
+                            <p class="text">非常华丽的一幅画，挂在房间太适合了，每天睁开眼睛第一眼就看到这幅画，心 情大好。</p>
+                            <div class="handle">
+                            	<span>您对这条评价的意见？</span>
+                                <a href="javascript:;">反对（0）</a> | 
+                                <a href="javascript:;">赞成（0）</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>	
+                    	<div class="vip_user">
+                        	<div class="vip_photo"><a href="#"><img src="images/vip_photo.jpg" /></a></div>
+                            <div class="vip_text"><a href="#">QIYUAN</a><br><a href="#">注册会员</a></div>
+                        </div>
+                        <div class="pl_detail">
+                        	<div class="stars">
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_half02.gif" />
+                                <img src="images/star_null02.gif" />
+                            </div>
+                            <div class="works">
+                            	<a class="name" href="##">华丽的画</a>
+                                <span class="time"> 2013-04-29  22：12：11</span>
+                            </div>
+                            <p class="text">非常华丽的一幅画，挂在房间太适合了，每天睁开眼睛第一眼就看到这幅画，心 情大好。</p>
+                            <div class="handle">
+                            	<span>您对这条评价的意见？</span>
+                                <a href="javascript:;">反对（0）</a> | 
+                                <a href="javascript:;">赞成（0）</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>	
+                    	<div class="vip_user">
+                        	<div class="vip_photo"><a href="#"><img src="images/vip_photo.jpg" /></a></div>
+                            <div class="vip_text"><a href="#">QIYUAN</a><br><a href="#">注册会员</a></div>
+                        </div>
+                        <div class="pl_detail">
+                        	<div class="stars">
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_full02.gif" />
+                                <img src="images/star_half02.gif" />
+                                <img src="images/star_null02.gif" />
+                            </div>
+                            <div class="works">
+                            	<a class="name" href="##">华丽的画</a>
+                                <span class="time"> 2013-04-29  22：12：11</span>
+                            </div>
+                            <p class="text">非常华丽的一幅画，挂在房间太适合了，每天睁开眼睛第一眼就看到这幅画，心 情大好。</p>
+                            <div class="handle">
+                            	<span>您对这条评价的意见？</span>
+                                <a href="javascript:;">反对（0）</a> | 
+                                <a href="javascript:;">赞成（0）</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pinlun_page">
+                	<div class="page_num">共<span>4</span>/<span>10</span>页</div>
+                    <div class="page_rollbtn"><a href="#">上一页</a> | <a href="#">下一页</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hg_detail_right fr">
+    	<div class="hg_detail_part hg_line mt36">
+        	<h3>关于艺术家</h3>
+            <div class="art_intr">
+            梵高（1853年 - 1890年）是荷兰后印象派大师，其创新的艺术品，有力地影响了现代表现主义，野兽派，早期抽象。令人吃惊的是梵高（1853年 - 1890年）是荷兰后印象派大师，其创新的艺术品，有力地影响了现代表现主义，野兽派，早期抽象。令人吃惊的是梵高（1853年 - 1890年）是荷兰后印象派大师，其创新的艺术品，有力地影响了现代表现主义，野兽派，早期抽象。令人吃惊的是
+            </div>
+        </div>
+        <div class="hg_detail_part hg_line mt36">
+        	<h3>为您推荐</h3>
+            <div class="hg_tj" id="wntj">
+            	<ul class="tj_tab">
+                	<li>你可能喜欢</li>
+                	<li class="cur">相关分类</li>
+                </ul>
+                <ul class="tj_list clear">
+                	<li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic.jpg" /></a></div>
+                        <div class="name"><a href="#">盛开的花朵</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic2.jpg" /></a></div>
+                        <div class="name"><a href="#">冬天的中央公园</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic2.jpg" /></a></div>
+                        <div class="name"><a href="#">冬天的中央公园</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic.jpg" /></a></div>
+                        <div class="name"><a href="#">盛开的花朵</a></div> 
+                    </li>
+                </ul>
+                <ul class="tj_list clear">
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic2.jpg" /></a></div>
+                        <div class="name"><a href="#">冬天的中央公园</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic.jpg" /></a></div>
+                        <div class="name"><a href="#">盛开的花朵</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic.jpg" /></a></div>
+                        <div class="name"><a href="#">盛开的花朵</a></div> 
+                    </li>
+                    <li>
+                    	<div class="pic"><a href="#"><img src="images/tuijian_pic2.jpg" /></a></div>
+                        <div class="name"><a href="#">冬天的中央公园</a></div> 
+                    </li>
+                </ul>
+            </div>
+            <script>
+				$(document).ready(function(){
+					$('#wntj .tj_list').soChange({
+					thumbObj:'#wntj .tj_tab li',
+					thumbNowClass:'cur',
+					slideTime:0,
+					autoChange:false, 
+					delayTime:100
+					});
+				});
+			</script>
+        </div>
+    </div>
+</div>
+
+<!--最近浏览-->
+<div class="w_1008 hg_histroy mt36">
+	<h3 class="hg_line">最近浏览</h3>
+    <div class="hg_histroy_wap">
+        <ul id="mycarousel">
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic1.jpg" /></a></li>
+            <li><a href="#"><img src="images/history-pic2.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+});
+</script>
+<!--最近浏览 end-->
+
+<div class="hg_foot">
+	<div class="w_1008 pdb25 clear">
+    	<div class="foot_nav fl">
+        	<ul class="nav_list clear">
+            	<li>
+                	<h3>订购免费电话</h3>
+                    <p>
+                    	800-952-5592<br>
+                    	周一 - 周六<br>
+                    	上午9点 - 下午10点
+                    </p>
+                </li>
+                <li>
+                	<h3>顾客服务</h3>
+                    <p>
+                    	<a href="#">联系我们</a>
+                    	<a href="#">订购</a>
+                    	<a href="#">配送方式</a>
+                    	<a href="#">常见问题</a>
+                    </p>
+                </li>
+                <li>
+                	<h3>顾客服务</h3>
+                    <p>
+                    	<a href="#">进入我的帐户</a>
+                    	<a href="#">跟踪我的订单</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="foot_mail fr">
+        	<p class="title">订阅HALLIANA.COM电子邮件</p>
+        	<p class="clear"><input class="input_text" type="text" /><input class="input_btn" type="button" value="提交" /></p>
+        	<div class="touch">
+            	<span>关注我们：</span>
+                <a href="#"><img src="images/icon_sina.gif" /></a>
+                <a href="#"><img src="images/icon_qq.gif" /></a>
+                <a href="#"><img src="images/icon_vsins.gif" /></a>
+                <a href="#"><img src="images/icon_baidu.gif" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="border"><div></div></div>
+    <div class="w_1008 copyright">
+    	<p>CopyRight ? 2007-2016 halliana.com 苏ICP备8348号 NewPower Co. All </p>
+    </div>
+</div>
+				
+</body>
+</html>
